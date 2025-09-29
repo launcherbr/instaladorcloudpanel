@@ -76,8 +76,6 @@ Após a conclusão, você poderá acessar seu painel através do endereço `http
 
 # Instalador Whaticket SaaS
 
-Esse instalador foi modificado para ser instalado em um Servidor com CloudPanel.
-
 FAZENDO DOWNLOAD DO INSTALADOR & INICIANDO A PRIMEIRA INSTALAÇÃO (USAR SOMENTE PARA PRIMEIRA INSTALAÇÃO):
 
 ```bash
