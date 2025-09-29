@@ -80,12 +80,10 @@ Após a conclusão, você poderá acessar seu painel através do endereço `http
 
 # Instalador Whaticket SaaS
 
-Esse instalador foi modificado para ser instalado em um Servidor com CloudPanel.
-
 Fazendo download do instalador & iniciando a primeira instalação (usar somente para primeira instalação):
 
 ```bash
-sudo apt install -y git && git clone https://github.com/launcherbr/instalador.git instalador && sudo chmod -R 777 instalador  && cd instalador  && sudo ./install_primaria
+sudo apt install -y git && git clone https://github.com/launcherbr/instaladorcloudpanel.git instalador && sudo chmod -R 777 instalador  && cd instalador  && sudo ./install_primaria
 ```
 
 Acessando diretório do instalador & iniciando instalações adicionais (usar este comando para segunda ou mais instalação):
