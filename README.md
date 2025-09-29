@@ -1,6 +1,6 @@
 # Instalador Whaticket SaaS
 
-Use esse instalador se o repositório do Whaticket estiver público.
+Esse instalador foi modificado para ser instalado em um Servidor com CloudPanel.
 
 ```bash
 sudo apt -y update && apt -y upgrade
