@@ -1,10 +1,82 @@
+# Instalando o CloudPanel
+
+Para que o instalador do Whaticket funcione corretamente, primeiro você precisa ter o **CloudPanel** instalado e configurado em um servidor com Ubuntu limpo.
+
+## 1\. Acesso ao Servidor
+
+Acesse seu servidor via **SSH**. ssh
+
+Se você estiver usando uma **chave privada** para o login, o comando SSH será:
+
+```bash
+ssh -i /caminho/para/sua/chave_privada root@seuEnderecoDeIp
+```
+
+Se você estiver usando uma **senha** para o login, o comando SSH será:
+
+```bash
+ssh root@seuEnderecoDeIp
+```
+
+## 2\. Atualização e Preparação
+
+Antes de executar o instalador, precisamos atualizar o sistema e instalar os pacotes necessários.
+
+```bash
+apt update && apt -y upgrade && apt -y install curl wget sudo
+```
+
+## 3\. Executando o Instalador do CloudPanel
+
+Escolha a versão do seu sistema operacional e o banco de dados de sua preferência.
+
+### Para Ubuntu 24.04 LTS
+
+**Com MySQL 8.4:**
+
+```bash
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "19cfa702e7936a79e47812ff57d9859175ea902c62a68b2c15ccd1ebaf36caeb install.sh" | \
+sha256sum -c && sudo DB_ENGINE=MYSQL_8.4 bash install.sh
+```
+
+-----
+
+**Com MariaDB 11.4:**
+
+```bash
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "19cfa702e7936a79e47812ff57d9859175ea902c62a68b2c15ccd1ebaf36caeb install.sh" | \
+sha256sum -c && sudo DB_ENGINE=MARIADB_11.4 bash install.sh
+```
+
+### Para Ubuntu 22.04 LTS
+
+**Com MySQL 8.0:**
+
+```bash
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "19cfa702e7936a79e47812ff57d9859175ea902c62a68b2c15ccd1ebaf36caeb install.sh" | \
+sha256sum -c && sudo DB_ENGINE=MYSQL_8.0 bash install.sh
+```
+
+-----
+
+**Com MariaDB 11.4:**
+
+```bash
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "19cfa702e7936a79e47812ff57d9859175ea902c62a68b2c15ccd1ebaf36caeb install.sh" | \
+sha256sum -c && sudo DB_ENGINE=MARIADB_11.4 bash install.sh
+```
+
+Após a conclusão, você poderá acessar seu painel através do endereço `https://seuEnderecoDeIp:8443`.
+
+-----
+
 # Instalador Whaticket SaaS
 
 Esse instalador foi modificado para ser instalado em um Servidor com CloudPanel.
-
-```bash
-sudo apt -y update && apt -y upgrade
-```
 
 FAZENDO DOWNLOAD DO INSTALADOR & INICIANDO A PRIMEIRA INSTALAÇÃO (USAR SOMENTE PARA PRIMEIRA INSTALAÇÃO):
 
@@ -34,7 +106,7 @@ Depois de instalar as instâncias, você precisará apontar um domínio (ou subd
 
 **Pré-requisito:** Certifique-se de que os registros DNS (Tipo A) dos seus domínios/subdomínios já estão apontando para o endereço IP do seu servidor.
 
-### 1\. Proxy Reverso para o Frontend (Porta 3250)
+### 1\. Proxy Reverso para o Backend (Porta 3250)
 
 Esta configuração irá direcionar um subdomínio para a API da sua instância.
 
@@ -47,7 +119,7 @@ Esta configuração irá direcionar um subdomínio para a API da sua instância.
       * **PHP Version:** No PHP needed.
 5.  Clique em **Add Site**.
 
-### 2\. Proxy Reverso para o Backend (Porta 4000)
+### 2\. Proxy Reverso para o Frontend (Porta 4000)
 
 Esta configuração irá direcionar seu domínio principal ou um subdomínio para a interface de usuário da sua instância.
 
