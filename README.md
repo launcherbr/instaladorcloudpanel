@@ -1,10 +1,14 @@
+Com certeza\! Aqui está o texto do `README.md` com as seções que estavam em caixa alta corrigidas para a formatação padrão de títulos e frases.
+
+-----
+
 # Instalando o CloudPanel
 
 Para que o instalador do Whaticket funcione corretamente, primeiro você precisa ter o **CloudPanel** instalado e configurado em um servidor com Ubuntu limpo.
 
 ## 1\. Acesso ao Servidor
 
-Acesse seu servidor via **SSH**. ssh
+Acesse seu servidor via **SSH**.
 
 Se você estiver usando uma **chave privada** para o login, o comando SSH será:
 
@@ -76,13 +80,15 @@ Após a conclusão, você poderá acessar seu painel através do endereço `http
 
 # Instalador Whaticket SaaS
 
-FAZENDO DOWNLOAD DO INSTALADOR & INICIANDO A PRIMEIRA INSTALAÇÃO (USAR SOMENTE PARA PRIMEIRA INSTALAÇÃO):
+Esse instalador foi modificado para ser instalado em um Servidor com CloudPanel.
+
+Fazendo download do instalador & iniciando a primeira instalação (usar somente para primeira instalação):
 
 ```bash
 sudo apt install -y git && git clone https://github.com/launcherbr/instalador.git instalador && sudo chmod -R 777 instalador  && cd instalador  && sudo ./install_primaria
 ```
 
-ACESSANDO DIRETORIO DO INSTALADOR & INICIANDO INSTALAÇÕES ADICIONAIS (USAR ESTE COMANDO PARA SEGUNDA OU MAIS INSTALAÇÃO:
+Acessando diretório do instalador & iniciando instalações adicionais (usar este comando para segunda ou mais instalação):
 
 ```bash
 cd instalador  && sudo ./install_instancia
