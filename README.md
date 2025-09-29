@@ -108,7 +108,7 @@ Depois de instalar as instâncias, você precisará apontar um domínio (ou subd
 
 **Pré-requisito:** Certifique-se de que os registros DNS (Tipo A) dos seus domínios/subdomínios já estão apontando para o endereço IP do seu servidor.
 
-### 1\. Proxy Reverso para o Backend (Porta 3250)
+### 1\. Proxy Reverso para o Frontend (Porta 3250)
 
 Esta configuração irá direcionar um subdomínio para a API da sua instância.
 
@@ -121,7 +121,7 @@ Esta configuração irá direcionar um subdomínio para a API da sua instância.
       * **PHP Version:** No PHP needed.
 5.  Clique em **Add Site**.
 
-### 2\. Proxy Reverso para o Frontend (Porta 4000)
+### 2\. Proxy Reverso para o Backend (Porta 4000)
 
 Esta configuração irá direcionar seu domínio principal ou um subdomínio para a interface de usuário da sua instância.
 
